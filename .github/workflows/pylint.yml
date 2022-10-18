@@ -11,4 +11,5 @@ jobs:
     steps:
     - name: Check yaml lint
       run: |
+        git init
         yamllint $(git ls-files '*.yaml')

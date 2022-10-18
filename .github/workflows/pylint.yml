@@ -1,0 +1,14 @@
+name: Pylint
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
+    steps:
+    - name: Check yaml lint
+      run: |
+        yaml lint $(git ls-files '*.yaml')

@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Print current dir
       run: pwd
+    - name: List all folders
+      run: ls
     - name: Print all yaml files
       run: find . -name *.yml
     - name: Yaml lint

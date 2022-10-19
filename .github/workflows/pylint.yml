@@ -9,8 +9,5 @@ jobs:
       matrix:
         python-version: ["3.8"]
     steps:
-    - name: Check yaml lint
-      run: |
-        echo `pwd`
-        ls ${{ github.workspace }}
-        yamllint `find . -name *.yml`
+    - name: Super-Linter
+      uses: github/super-linter@v4.9.7

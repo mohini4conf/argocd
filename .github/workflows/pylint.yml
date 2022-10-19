@@ -11,4 +11,6 @@ jobs:
     steps:
     - name: Check yaml lint
       run: |
-        yamllint $( find . -name *.yml)
+        yaml_list = `find . -name *.yml`
+        if yaml_list; then
+          yamllint $yaml_list

@@ -13,8 +13,10 @@ jobs:
       run: env
     - name: Print current dir
       run: pwd
-    - name: List all folders
-      run: cd $RUNNER_WORKSPACE ; ls -lart
+    - name: List all folders in RUNNER_WORKSPACE
+      run: cd $RUNNER_WORKSPACE ; find . -type f
+    - name: List all folders in HOME
+      run: cd $HOME ; find . -type f
     - name: Print all yaml files
       run: find . -name *.yml
     - name: Yaml lint

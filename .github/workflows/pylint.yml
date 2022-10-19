@@ -11,6 +11,5 @@ jobs:
     steps:
     - name: Check yaml lint
       run: |
-        yaml_list = `find . -name *.yml`
         echo `pwd`
       

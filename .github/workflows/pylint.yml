@@ -1,23 +1,13 @@
-name: Pylint
-
-on: [push]
-
+name: Validate-YAML
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
-  build:
+  validate-yaml:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.8"]
     steps:
-    - name: list all env variables
-      run: env
-    - name: Print current dir
-      run: pwd
-    - name: List all folders in RUNNER_WORKSPACE
-      run: cd $RUNNER_WORKSPACE ; find . -type f
-    - name: List all folders in HOME
-      run: cd $HOME ; find . -type f
-    - name: Print all yaml files
-      run: find . -name *.yml
-    - name: Yaml lint
-      run: yamllint .
+      - uses: actions/checkout@v2
+      - name: Validate YAML file
+        run: yamllint .

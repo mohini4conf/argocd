@@ -9,5 +9,7 @@ jobs:
       matrix:
         python-version: ["3.8"]
     steps:
+    - name: Print all yaml files
+      run: find . -name *.yml
     - name: Yaml lint
       run: yamllint .

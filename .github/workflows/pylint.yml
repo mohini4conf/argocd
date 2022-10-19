@@ -12,4 +12,5 @@ jobs:
     - name: Check yaml lint
       run: |
         echo `pwd`
+        ls ${{ github.workspace }}
         yamllint `find . -name *.yml`

@@ -12,4 +12,4 @@ jobs:
     - name: Check yaml lint
       run: |
         echo `pwd`
-      
+        yamllint `find . -name *.yml`

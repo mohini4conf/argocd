@@ -14,7 +14,7 @@ jobs:
     - name: Print current dir
       run: pwd
     - name: List all folders
-      run: ls -lart
+      run: cd $RUNNER_WORKSPACE ; ls -lart
     - name: Print all yaml files
       run: find . -name *.yml
     - name: Yaml lint
